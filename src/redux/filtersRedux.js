@@ -38,6 +38,12 @@ export default function reducer(statePart = [], action = {}) {
         tags: [...statePart.tags, action.payload],
       };
 
+    case REMOVE_TAG:
+      return {
+        ...statePart,
+        tags: [...statePart.tags.filter(tag => action.payload !== tag)],
+      };
+
     // eslint-disable-next-line no-fallthrough
     default:
       return statePart;
