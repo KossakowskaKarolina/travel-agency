@@ -31,6 +31,14 @@ export default function reducer(statePart = [], action = {}) {
         searchPhrase: action.payload,
       };
     // TODO - handle other action types
+
+    case ADD_TAG:
+      return {
+        ...statePart,
+        tags: [...statePart.tags, action.payload],
+      };
+
+    // eslint-disable-next-line no-fallthrough
     default:
       return statePart;
   }
