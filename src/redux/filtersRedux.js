@@ -18,7 +18,7 @@ export const CHANGE_DURATION_TO = createActionName('CHANGE_DURATION_TO');
 
 // action creators
 export const changeSearchPhrase = payload => ({ payload, type: CHANGE_PHRASE });
-// TODO - add other action creators
+// DONE - add other action creators
 export const addTag = payload => ({ payload, type: ADD_TAG });
 export const removeTag = payload => ({ payload, type: REMOVE_TAG });
 export const changeDurationFrom = payload => ({ payload, type: CHANGE_DURATION_FROM });
@@ -32,7 +32,8 @@ export default function reducer(statePart = [], action = {}) {
         ...statePart,
         searchPhrase: action.payload,
       };
-    // TODO - handle other action types
+
+    // DONE - handle other action types
 
     case ADD_TAG:
       return {
@@ -47,7 +48,6 @@ export default function reducer(statePart = [], action = {}) {
       };
 
     case CHANGE_DURATION_FROM:
-      console.log(statePart, action.payload);
       return {
         ...statePart,
         duration: {
@@ -57,7 +57,6 @@ export default function reducer(statePart = [], action = {}) {
       };
 
       case CHANGE_DURATION_TO:
-      console.log(statePart, action.payload);
       return {
         ...statePart,
         duration: {
