@@ -11,7 +11,7 @@ const OrderForm = (props) => (
   <Grid>
     <Row>
     {pricing.map(option => (
-        <Col md={4} key={option.id}><OrderOption name={option.name}/></Col>
+        <Col md={4} key={option.id}><OrderOption {...option} currentValue={props.options[option.id]} setOrderOption={props.setOrderOption}/></Col>
     ))}
       <Col xs={12}>
         <OrderSummary cost={props.tripCost} options={props.options}/>
