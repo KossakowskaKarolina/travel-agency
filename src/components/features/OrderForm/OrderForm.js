@@ -9,7 +9,7 @@ const OrderForm = (props) => (
   <Grid>
     <Row>
       <Col xs={12}>
-        <OrderSummary cost={props.tripCost}/>
+        <OrderSummary cost={props.tripCost} options={props.options}/>
       </Col>
     </Row>
   </Grid>
