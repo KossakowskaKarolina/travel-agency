@@ -5,7 +5,12 @@ import styles from './OrderOption.module.scss';
 
 const OrderOptionText = ({setOptionValue}) => (
   <div>
-    <input className={styles.text} type='text' onChange={event => setOptionValue(event.currentTarget.value)}></input>
+    <input
+      className={styles.text}
+      type='text'
+      onChange={event => setOptionValue(event.currentTarget.value)}
+      placeholder="Enter your text here!"
+    />
   </div>
 )
 
