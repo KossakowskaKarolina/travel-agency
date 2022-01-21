@@ -6,9 +6,9 @@ import { formatPrice } from '../../../utils/formatPrice';
 import styles from './OrderOption.module.scss';
 
 const OrderOptionNumber = ({currentValue, limits, setOptionValue, price}) => (
-  <div className={styles.number}>
+  <div>
     <input
-      className={styles.input}
+      className={styles.inputSmall}
       type = 'number'
       value = {currentValue}
       min = {limits.min} max = {limits.max}
