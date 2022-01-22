@@ -21,7 +21,6 @@ const TripSummary = ({id, image, name, cost, days, tags}) => (
         </div>
       </article>
     </Link>
-    {console.log(tags)}
   </Col>
 );
 
