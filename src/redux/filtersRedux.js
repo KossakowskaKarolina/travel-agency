@@ -33,7 +33,7 @@ export default function reducer(statePart = [], action = {}) {
         searchPhrase: action.payload,
       };
 
-    // DONE - handle other action types
+      // DONE - handle other action types
 
     case ADD_TAG:
       return {
@@ -56,7 +56,7 @@ export default function reducer(statePart = [], action = {}) {
         },
       };
 
-      case CHANGE_DURATION_TO:
+    case CHANGE_DURATION_TO:
       return {
         ...statePart,
         duration: {

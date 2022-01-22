@@ -24,6 +24,6 @@ OrderOptionDropdown.propTypes = {
   required: PropTypes.bool,
   currentValue: PropTypes.string,
   setOptionValue: PropTypes.func,
-}
+};
 
 export default OrderOptionDropdown;

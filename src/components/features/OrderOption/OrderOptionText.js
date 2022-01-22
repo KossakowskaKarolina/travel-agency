@@ -12,10 +12,10 @@ const OrderOptionText = ({setOptionValue}) => (
       placeholder="Enter your text here!"
     />
   </div>
-)
+);
 
 OrderOptionText.propTypes = {
   setOptionValue: PropTypes.func,
-}
+};
 
 export default OrderOptionText;
