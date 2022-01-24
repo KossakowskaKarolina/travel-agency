@@ -1,18 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
-const OrderOptionDate = () => {
-  const [startDate, setStartDate] = useState(new Date());
+const OrderOptionDate = ({currentValue, setOptionValue}) => {
+  //const [currentValue, setOptionValue] = useState(new Date());
   return (
     <DatePicker
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
+      selected={currentValue}
+      onChange={(value) => setOptionValue(value)}
       isClearable
       placeholderText="Pick a date!"
     />
   );
+};
+
+OrderOptionDate.propTypes = {
+  setOptionValue: PropTypes.func,
+  currentValue: PropTypes.string,
 };
 
 export default OrderOptionDate;
