@@ -57,7 +57,7 @@ const mockPropsForType = { // zawiera propsy istotne tylko dla konkretnego typu 
 };
 
 const testValue = mockProps.values[1].id;
-//const testValueNumber = 3;
+const testValueNumber = 3;
 
 for(let type in optionTypes){
   describe(`Component OrderOption with type=${type}`, () => {
@@ -121,6 +121,7 @@ for(let type in optionTypes){
 
         it('should run setOrderOption function on click', () => {
           renderedSubcomponent.find('div div:last-child').simulate('click');
+          expect(mockSetOrderOption).toBeCalledTimes(1);
           expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: mockProps.values[1].id });
         });
         break;
@@ -132,6 +133,16 @@ for(let type in optionTypes){
       }
 
       case 'number': {
+        it('contains input', () => {
+          const input = renderedSubcomponent.find('input');
+          expect(input.length).toBe(1);
+        });
+
+        it('should run setOrderOption function on change', () => {
+          renderedSubcomponent.find('input').simulate('change', {currentTarget: {value: testValueNumber}});
+          expect(mockSetOrderOption).toBeCalledTimes(1);
+          expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValueNumber });
+        });
 
         break;
       }
