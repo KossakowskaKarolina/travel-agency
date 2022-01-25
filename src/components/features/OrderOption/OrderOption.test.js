@@ -128,6 +128,17 @@ for(let type in optionTypes){
       }
 
       case 'checkboxes': {
+        it('contains input type checkbox', () => {
+          const input = renderedSubcomponent.find('input[type="checkbox"]');
+          expect(input).toBeTruthy();
+        });
+
+        it('should run setOrderOption function on click', () => {
+          const checkedInput = renderedSubcomponent.find('[value="' + testValue + '"]');
+          checkedInput.simulate('change', {currentTarget: {checked: true}});
+          expect(mockSetOrderOption).toBeCalledTimes(1);
+          expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: [mockProps.currentValue, testValue] });
+        });
 
         break;
       }
