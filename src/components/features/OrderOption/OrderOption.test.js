@@ -112,6 +112,41 @@ for(let type in optionTypes){
 
         break;
       }
+
+      case 'icons': {
+        it('contains div with icon class', () => {
+          const icon = renderedSubcomponent.find('div .icon');
+          expect(icon).toBeTruthy();
+        });
+
+        it('should run setOrderOption function on click', () => {
+          renderedSubcomponent.find('div div:last-child').simulate('click');
+          expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: mockProps.values[1].id });
+        });
+        break;
+      }
+
+      case 'checkboxes': {
+
+        break;
+      }
+
+      case 'number': {
+
+        break;
+      }
+
+      case 'text': {
+
+        break;
+      }
+
+      case 'date': {
+
+        break;
+      }
     }
-  });
+
+  },
+  );
 }
