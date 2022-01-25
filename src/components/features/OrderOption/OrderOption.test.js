@@ -133,8 +133,8 @@ for(let type in optionTypes){
       }
 
       case 'number': {
-        it('contains input', () => {
-          const input = renderedSubcomponent.find('input');
+        it('contains input type number', () => {
+          const input = renderedSubcomponent.find('input[type="number"]');
           expect(input.length).toBe(1);
         });
 
@@ -148,8 +148,8 @@ for(let type in optionTypes){
       }
 
       case 'text': {
-        it('contains input', () => {
-          const input = renderedSubcomponent.find('input');
+        it('contains input type text', () => {
+          const input = renderedSubcomponent.find('input[type="text"]');
           expect(input.length).toBe(1);
         });
 
