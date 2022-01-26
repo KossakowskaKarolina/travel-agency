@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
+// eslint-disable-next-line react/prop-types
 const OrderOptionDate = ({currentValue, setOptionValue}) => {
   //const [currentValue, setOptionValue] = useState(new Date());
   return (
@@ -18,7 +19,6 @@ const OrderOptionDate = ({currentValue, setOptionValue}) => {
 
 OrderOptionDate.propTypes = {
   setOptionValue: PropTypes.func,
-  currentValue: PropTypes.string,
 };
 
 export default OrderOptionDate;
