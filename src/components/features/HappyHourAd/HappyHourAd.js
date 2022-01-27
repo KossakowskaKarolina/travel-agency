@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 
 class HappyHourAd extends React.Component {
 
+  constructor(){
+    super();
+
+    /* run  every second */
+    setInterval(() => this.forceUpdate(), 1000);
+  }
+
   getCountdownTime(){
     const currentTime = new Date();
     const nextNoon = new Date(Date.UTC(currentTime.getUTCFullYear(), currentTime.getUTCMonth(), currentTime.getUTCDate(), 12, 0, 0, 0));
