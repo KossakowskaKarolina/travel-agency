@@ -17,11 +17,6 @@ describe('Component DaysToSummer', () => {
     const component = shallow(<DaysToSummer />);
     expect(component).toBeTruthy();
   });
-
-  it('should render correct text', () => {
-    const component = shallow(<DaysToSummer {...mockProps} />);
-    expect(component.find(select.title).text()).toEqual(mockProps.text);
-  });
 });
 
 const trueDate = Date;
@@ -52,8 +47,8 @@ const checkDescriptionAtTime = (time, expectedDescription) => {
 };
 
 describe('Component HappyHourAd with mocked Date', () => {
-  checkDescriptionAtTime('2022-01-28', '144');
+  checkDescriptionAtTime('2022-01-28', '144 days to summer');
   checkDescriptionAtTime('2022-07-14', '');
-  checkDescriptionAtTime('2022-06-20', '1');
-  checkDescriptionAtTime('2022-10-10', '254');
+  checkDescriptionAtTime('2022-06-20', '1 day to summer');
+  checkDescriptionAtTime('2022-10-10', '254 days to summer');
 });
