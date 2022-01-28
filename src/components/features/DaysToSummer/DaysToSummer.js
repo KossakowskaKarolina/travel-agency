@@ -26,7 +26,7 @@ class DaysToSummer extends React.Component {
   render(){
     return (
       <div className={styles.component}>
-        <h3 className={styles.days}>{this.getCountdownTime()}</h3>
+        <h2 className={styles.days}>{this.getCountdownTime()}</h2>
       </div>
     );
   }
