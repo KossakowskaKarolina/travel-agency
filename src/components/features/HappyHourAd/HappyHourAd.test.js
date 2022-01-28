@@ -12,6 +12,11 @@ const mockProps = {
   promoDescription: '1234',
 };
 
+beforeAll(() => {
+  const utilsModule = jest.requireActual('../../../utils/formatTime.js'); // jest.requireActual: upewniamy się, że importujemy faktyczny kod pliku, a nie zmockowaną wersję
+  utilsModule.formatTime = jest.fn(seconds => seconds); // mockujemy funkcję, żeby zawsze zwracała przekazany jej argument
+});
+
 describe('Component HappyHourAd', () => {
 
   it('should render without crashing', () => {
