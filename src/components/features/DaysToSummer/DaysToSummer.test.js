@@ -3,7 +3,6 @@ import {shallow} from 'enzyme';
 import DaysToSummer from './DaysToSummer';
 
 const select = {
-  title: '.title',
   days: '.days',
 };
 
@@ -16,6 +15,11 @@ describe('Component DaysToSummer', () => {
   it('should render without crashing', () => {
     const component = shallow(<DaysToSummer />);
     expect(component).toBeTruthy();
+  });
+
+  it('should render header', () => {
+    const component = shallow(<DaysToSummer />);
+    expect(component.exists(select.days)).toEqual(true);
   });
 });
 
