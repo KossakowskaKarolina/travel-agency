@@ -38,9 +38,9 @@ const mockDate = customDate => class extends Date {
   }
 };
 
-const checkDescriptionAtTime = (time, expectedDescription) => {
-  it(`should show correct at ${time}`, () => {
-    global.Date = mockDate(`${time}T10:34:04.543Z`);
+const checkDescriptionAtTime = (days, expectedDescription) => {
+  it(`should show correct at ${days}`, () => {
+    global.Date = mockDate(`${days}T10:34:04.543Z`);
 
     const component = shallow(<DaysToSummer {...mockProps} />);
     const renderedTime = component.find(select.days).text();
