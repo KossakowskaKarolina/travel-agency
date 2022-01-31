@@ -31,11 +31,6 @@ describe('utils', () => {
       expect(promoPrice()).toBe(null);
     });
 
-    it('should return null if at least one of the args is not a number', () => {
-      expect(promoPrice('abc', 2)).toBe(null);
-      expect(promoPrice(5, () => {})).toBe(null);
-    });
-
     it('should return null if at least one of the args is zero or lower', () => {
       expect(promoPrice(-1, 5)).toBe(null);
       expect(promoPrice(0, 3)).toBe(null);
