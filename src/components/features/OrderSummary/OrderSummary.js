@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 
 import {calculateTotal} from '../../../utils/calculateTotal';
 import {formatPrice} from '../../../utils/formatPrice';
+import { promoPrice } from '../../../utils/promoPrice';
 
 import styles from './OrderSummary.module.scss';
 
 const OrderSummary = (props) => (
-  <h2 className={styles.component}>Total <strong>{formatPrice(calculateTotal(props.cost, props.options))}</strong></h2>
+  <div className={styles.component}>
+    <h2>Price from: <strong>{formatPrice(promoPrice(calculateTotal(props.cost, props.options), 20))}</strong></h2>
+    <h4 className={styles.standardprice}>Standard price: <strong>{formatPrice(calculateTotal(props.cost, props.options))}</strong></h4>
+  </div>
 );
 
 OrderSummary.propTypes = {

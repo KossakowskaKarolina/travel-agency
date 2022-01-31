@@ -43,6 +43,9 @@
   span {
     display: block;
   }
+  .price {
+    font-size: ($base-size * 1.75);
+  }
 }
 
 .tags {
